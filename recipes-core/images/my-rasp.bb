@@ -1,12 +1,20 @@
 SUMMARY = "A very basic Wayland image with a terminal"
 
-IMAGE_FEATURES += "splash package-management ssh-server-dropbear hwcodecs weston"
+IMAGE_FEATURES += "splash debug-tweaks package-management ssh-server-dropbear hwcodecs weston dev-pkgs"
 
 LICENSE = "MIT"
 
-inherit core-image
+inherit core-image populate_sdk_qt6_base
 
-CORE_IMAGE_BASE_INSTALL += "gtk+3-demo"
-CORE_IMAGE_BASE_INSTALL += "${@bb.utils.contains('DISTRO_FEATURES', 'x11', 'weston-xwayland matchbox-terminal', '', d)}"
+IMAGE_INSTALL += " \
+    libstdc++ \
+    coreutils \
+    mtd-utils \
+    packagegroup-core-full-cmdline \
+    packagegroup-core-buildessential \
+    packagegroup-qt6-modules \
+    gtk+3-demo \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'x11 wayland', 'weston-xwayland xterm', '', d)} \
+"
 
 QB_MEM = "-m 512"
