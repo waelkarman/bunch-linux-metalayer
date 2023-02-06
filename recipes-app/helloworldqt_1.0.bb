@@ -16,7 +16,7 @@ SRC_URI = "git://git@github.com/waelkarman/helloworldqt.git;protocol=ssh;branch=
 
 # Modify these as desired
 PV = "1.0+git${SRCPV}"
-SRCREV = "2d7c28bd70eb0265045ca3d00332ab8e16016a49"
+SRCREV = "0cec15e7a87c0967bc68440ffd3a8c7d48bdab72"
 
 S = "${WORKDIR}/git"
 
