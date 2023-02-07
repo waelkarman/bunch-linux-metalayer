@@ -2,5 +2,5 @@
 export OEROOT
 . "$OEROOT"./poky/oe-init-build-env
 
-cp ../meta-my-rasp/init/bblayers.conf ./conf/;
-cp ../meta-my-rasp/init/local.conf ./conf/;
+cp ../meta-bunch-linux/init/bblayers.conf ./conf/;
+cp ../meta-bunch-linux/init/local.conf ./conf/;
