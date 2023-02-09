@@ -12,23 +12,22 @@
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
 
-SRC_URI = "git://git@github.com/waelkarman/smart-house.git;protocol=ssh;branch=master"
+SRC_URI = "git://github.com/waelkarman/helloworldqml.git;protocol=https;branch=master"
 
 # Modify these as desired
 PV = "1.0+git${SRCPV}"
-SRCREV = "c93febe82d4d51342587551da4e059cb5b425a49"
+SRCREV = "9296d27a78e05877efa75b1d8e9fdf274a5181a3"
 
 S = "${WORKDIR}/git"
 
 DEPENDS = "qtdeclarative"
 
-FILES:${PN} += "/home/root/smart-house" 
-
 inherit qmake5
+
+FILES:${PN} += "/home/root/helloworldqml" 
 
 python do_display_banner() {
     bb.plain("*  Install QML test application ............    *");
 }
 
 addtask display_banner before do_build
-
