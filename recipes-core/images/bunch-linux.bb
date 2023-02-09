@@ -12,4 +12,4 @@ CORE_IMAGE_EXTRA_INSTALL += "wayland weston"
 
 IMAGE_FEATURES += "splash dev-pkgs debug-tweaks package-management ssh-server-dropbear"
 
-IMAGE_INSTALL:append = "helloworld helloworldqt nano smart-house"
+IMAGE_INSTALL:append = "nano helloworld helloworldqt helloworldqml hello-module"
