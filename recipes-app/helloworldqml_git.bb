@@ -20,7 +20,7 @@ SRCREV = "9296d27a78e05877efa75b1d8e9fdf274a5181a3"
 
 S = "${WORKDIR}/git"
 
-DEPENDS = "qtdeclarative"
+DEPENDS = "qtwayland"
 
 inherit qmake5
 
