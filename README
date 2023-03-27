@@ -13,3 +13,6 @@ II. Misc
 ========
 
 --- layer currently not ready  ---
+Wayland environment shoul me manually exported:
+export WAYLAND_DISPLAY=wayland-1
+export XDG_RUNTIME_DIR=/run/user/1000
