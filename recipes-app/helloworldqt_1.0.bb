@@ -12,7 +12,7 @@
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
 
-SRC_URI = "git://git@github.com/waelkarman/helloworldqt.git;protocol=ssh;branch=master"
+SRC_URI = "git://git@github.com/waelkarman/helloworldqt.git;user=waelkarman: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;protocol=ssh;branch=master"
 
 # Modify these as desired
 PV = "1.0+git${SRCPV}"
