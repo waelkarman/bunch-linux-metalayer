@@ -12,7 +12,7 @@
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
 
-SRC_URI = "git://github.com/waelkarman/helloworldqml.git;protocol=https;branch=master"
+SRC_URI = "git://github.com/waelkarman/helloworldqml.git;user=waelkarman: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;protocol=https;branch=master"
 
 # Modify these as desired
 PV = "1.0+git${SRCPV}"
