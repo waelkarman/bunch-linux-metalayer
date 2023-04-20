@@ -3,10 +3,6 @@ Bunch linux is a project created for educational purposes. The goal is to learn 
 The project also acts as an entry point for those who want to approach the embedded world for business reasons or even just to fully understand the foundations of systems and applications starting from the lowest possible level.
 The intent therefore is not so much the production of applications that work on an Embedded System as the possibility of porting any application to an embedded one.
 
-# How to build
-bunch-linux derives directly from poky by extending and customizing the known distro already included in the Yocto project if necessary.
-    
-
 # Custom
 ### wayland
 Wayland è il più recente protocollo per la gestione grafica, è possibile customizzare il proprio ambiente virtuale partendo dal noto compositor weston.  
@@ -23,6 +19,10 @@ Fin ora gli applicativi correttamente integrati compongono:
 3. applicativi in QT
 4. applicativi in QML
 5. moduli del kernel
+
+# How to build
+bunch-linux derives directly from poky by extending and customizing the known distro already included in the Yocto project if necessary.
+   
 
 # Develop your application
 
