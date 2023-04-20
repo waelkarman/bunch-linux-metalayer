@@ -18,11 +18,11 @@ Alsa è la principale architettura audio per il sistema operativo linux. La sua 
 # Integration
 Come precedentemente discusso il progetto mira, oltre alla customizzazione della distro stessa anche la semplificazione dell integrazione di applicativi di ogni genere.
 Fin ora gli applicativi correttamente integrati compongono:
-_ applicativi in C
-_ applicativi in C++
-_ applicativi in QT
-_ applicativi in QML
-_ moduli del kernel
+1. applicativi in C
+2. applicativi in C++
+3. applicativi in QT
+4. applicativi in QML
+5. moduli del kernel
 
 # Develop your application
 
