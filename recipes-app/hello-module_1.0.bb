@@ -16,7 +16,7 @@ SRC_URI = "git://git@github.com/waelkarman/hello-module.git;user=waelkarman:ghp_
 
 # Modify these as desired
 PV = "1.0+git${SRCPV}"
-SRCREV = "cf561b33bf8d6b25b8c589ae11e66d86c8cc3722"
+SRCREV = "8c012f0b82b22b0f7d9bfcf7e67f2640ea9f9f13"
 
 S = "${WORKDIR}/git"
 
