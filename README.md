@@ -8,13 +8,21 @@ bunch-linux derives directly from poky by extending and customizing the known di
     
 
 # Custom
-## wayland
-## directfb
-## alsa
+### wayland
+Wayland è il più recente protocollo per la gestione grafica, è possibile customizzare il proprio ambiente virtuale partendo dal noto compositor weston.  
+### directfb
+Oltre all'utilizzo di weston è possibile graficare lapropria applicazione senza la presenza di un ambiente virtuale passando sul frame buffer direttamente i dati ricevuti dall applicazione di interesse.
+### alsa
+Alsa è la principale architettura audio per il sistema operativo linux. La sua customizzazione propone la creazione di profili per gestire i diversi canali audio ed il loro comportamento. 
 
 # Integration
 Come precedentemente discusso il progetto mira, oltre alla customizzazione della distro stessa anche la semplificazione dell integrazione di applicativi di ogni genere.
-Fin ora gli applicativi correttamente 
+Fin ora gli applicativi correttamente integrati compongono:
+_ applicativi in C
+_ applicativi in C++
+_ applicativi in QT
+_ applicativi in QML
+_ moduli del kernel
 
 # Develop your application
 
