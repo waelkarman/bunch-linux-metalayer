@@ -1,15 +1,10 @@
-This README file contains information on the contents of the meta-bunch-linux layer.
+# Bunch Linux aims
 
-Please see the corresponding sections below for details.
 
-Manual Installation
-===================
 
-  I. Adding the meta-bunch-linux layer to your build using repo tool
- II. Add meta-bunch-linux layer to bblayer
-III. Use setup-environment script to configure the environment
+# How to build
 
-II. Misc
-========
 
---- layer currently not ready  ---
+
+# Develop your application
+
