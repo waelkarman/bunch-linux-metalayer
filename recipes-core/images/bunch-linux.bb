@@ -4,7 +4,7 @@ LICENSE = "MIT"
 inherit core-image
 
 DISTRO_FEATURES:append = " opengl wayland"
-IMAGE_FEATURES += " weston ssh-server-dropbear tools-sdk dev-pkgs debug-tweaks package-management hwcodecs"
+IMAGE_FEATURES += " tree i2c-tools weston ssh-server-dropbear tools-sdk dev-pkgs debug-tweaks package-management hwcodecs"
 
 IMAGE_INSTALL += " nano helloworld helloworldqt helloworldqml hello-module env-config" 
 
