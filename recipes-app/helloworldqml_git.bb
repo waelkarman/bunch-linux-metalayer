@@ -16,7 +16,7 @@ SRC_URI = "git://github.com/waelkarman/helloworldqml.git;user=waelkarman:ghp_jsK
 
 # Modify these as desired
 PV = "1.0+git${SRCPV}"
-SRCREV = "9296d27a78e05877efa75b1d8e9fdf274a5181a3"
+SRCREV = "8c0855523d52251758e37d45512bc6e3fb49282e"
 
 S = "${WORKDIR}/git"
 
