@@ -12,11 +12,11 @@
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
 
-SRC_URI = "git://git@github.com/waelkarman/ipc-c-server-test.git;user=waelkarman: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;protocol=ssh;branch=main"
+SRC_URI = "git://git@github.com/waelkarman/ipc-cp-publish-test.git;user=waelkarman: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;protocol=ssh;branch=main"
 
 # Modify these as desired
 PV = "1.0+git${SRCPV}"
-SRCREV = "d96e8210b7687a0d2136a2a0765ecf9affd42ade"
+SRCREV = "1b7cbd673a47765172a3c6b28053903174b68520"
 
 S = "${WORKDIR}/git"
 
