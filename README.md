@@ -6,9 +6,7 @@ The intent therefore is not so much the production of applications that work on 
 # GUI
 ### Weston
 Wayland 
-# IPC
-### ZeroMQ
-services and applications exchanging messages through a flaxible interprocess communication based on ZeroMQ. This way applications written with any language could exchange rapidly informations and work as a single application. 
+
 # Audio
 ### Alsa
 Alsa è la principale architettura audio per il sistema operativo linux. La sua customizzazione propone la creazione di profili per gestire i diversi canali audio ed il loro comportamento. 
@@ -22,6 +20,13 @@ Fin ora gli applicativi correttamente integrati compongono:
 4. Qt/QML applications
 5. Kernel Modules
 
+# IPC
+### ZeroMQ
+services and applications exchanging messages through a flaxible interprocess communication based on ZeroMQ. This way applications written with any language could exchange rapidly informations and work as a single application. 
+
+# Develop your application
+
+
 # How to build
 bunch-linux derives directly from poky by extending and customizing the known distro already included in the Yocto project if necessary.
 Google repo tool is needed to collect the sources and start the build process. To build from sources you can init the repo to the manifest and synchronize the sources easily. Repo tool will download the sources and configure the environment for you. 
@@ -31,7 +36,4 @@ Once the environment is properly set you should source to the setup-environment 
 The compiled image will be located into the build folder at the following path
 """/build/tmp/deploy/images/raspberrypi4-64"""
 Getting the image it should be flashed through linux dd command or using third party software like BalenaEtcher, Raspberry Imager
-
-
-# Develop your application
 
