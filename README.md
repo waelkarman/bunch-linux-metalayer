@@ -35,3 +35,6 @@ Getting the image it should be flashed through linux dd command or using third p
 
 
 # Develop your application
+per vedere tutti task eseguiti durante il processo di compilazione è possibile usare il comando 
+bitbake -g bunch-linux -u taskexp
+
