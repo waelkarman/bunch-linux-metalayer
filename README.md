@@ -6,10 +6,10 @@ The intent therefore is not so much the production of applications that work on 
 # GUI
 ### Weston
 Wayland 
-
-### IPC - ZeroMQ
+# IPC
+### ZeroMQ
 services and applications exchanging messages through a flaxible interprocess communication based on ZeroMQ. This way applications written with any language could exchange rapidly informations and work as a single application. 
-
+# Audio
 ### Alsa
 Alsa è la principale architettura audio per il sistema operativo linux. La sua customizzazione propone la creazione di profili per gestire i diversi canali audio ed il loro comportamento. 
 
