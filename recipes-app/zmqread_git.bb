@@ -12,16 +12,18 @@
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
 
-SRC_URI = "git://git@github.com/waelkarman/write-gpio-sysfs-test-.git;protocol=ssh;branch=master"
+SRC_URI = "git://git@github.com/waelkarman/read-gpio-sysfs-test.git;protocol=ssh;branch=master"
 
 # Modify these as desired
 PV = "1.0+git${SRCPV}"
-SRCREV = "456687be0ea1aea66220e0def5fc64f146aced9f"
+SRCREV = "783da2809d21d2b4e8979a980e6333a2198aac9d"
 
 S = "${WORKDIR}/git"
 
 # NOTE: unable to map the following CMake package dependencies: sysfsgpio
 inherit cmake
+
+DEPENDS = "sysfsgpio"
 
 # Specify any options you want to pass to cmake using EXTRA_OECMAKE:
 EXTRA_OECMAKE = ""

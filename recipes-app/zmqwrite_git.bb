@@ -12,11 +12,11 @@
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
 
-SRC_URI = "git://git@github.com/waelkarman/read-gpio-sysfs-test.git;protocol=ssh;branch=master"
+SRC_URI = "git://git@github.com/waelkarman/write-gpio-sysfs-test-.git;protocol=ssh;branch=master"
 
 # Modify these as desired
 PV = "1.0+git${SRCPV}"
-SRCREV = "477efffedc069ef345002faa6365adb5dd229216"
+SRCREV = "b26ac8bad54bc473aa0bbd8b58a37a94a558c4e1"
 
 S = "${WORKDIR}/git"
 
