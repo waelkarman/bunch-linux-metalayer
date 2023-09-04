@@ -12,22 +12,22 @@
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
 
-SRC_URI = "git://github.com/waelkarman/helloworldqml.git;user=waelkarman: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;protocol=https;branch=master"
+SRC_URI = "git://github.com/waelkarman/helloworldqml.git;user=waelkarman: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;protocol=https;branch=ipc-integration"
 
 # Modify these as desired
 PV = "1.0+git${SRCPV}"
-SRCREV = "8c0855523d52251758e37d45512bc6e3fb49282e"
+SRCREV = "229227ed073df1610736fcdbf99504dc42c347b1"
 
 S = "${WORKDIR}/git"
 
-DEPENDS = "qtwayland"
+DEPENDS = "qtwayland zmqpp cppzmq zeromq"
 
 inherit qmake5
 
 FILES:${PN} += "/home/root/helloworldqml" 
 
 python do_display_banner() {
-    bb.plain("*  Install QML test application ............    *");
+    bb.plain("*  Install QML SENSORS application ............    *");
 }
 
 addtask display_banner before do_build

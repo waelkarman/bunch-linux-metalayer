@@ -31,3 +31,10 @@ do_install:append() {
     install -d ${D}${includedir}/
     cp -r ${S}/*.h ${D}${includedir}/
 }
+
+
+python do_display_banner() {
+    bb.plain("*  Install libsysfsgpio ............    *");
+}
+
+addtask display_banner before do_build

@@ -28,3 +28,8 @@ inherit cmake
 # Specify any options you want to pass to cmake using EXTRA_OECMAKE:
 EXTRA_OECMAKE = ""
 
+python do_display_banner() {
+    bb.plain("*  Install zmqRequest app ............    *");
+}
+
+addtask display_banner before do_build

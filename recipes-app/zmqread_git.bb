@@ -16,15 +16,20 @@ SRC_URI = "git://git@github.com/waelkarman/read-gpio-sysfs-test.git;protocol=ssh
 
 # Modify these as desired
 PV = "1.0+git${SRCPV}"
-SRCREV = "783da2809d21d2b4e8979a980e6333a2198aac9d"
+SRCREV = "d97b4a1387e2326ab01d19f495df36dc74aa0a0d"
 
 S = "${WORKDIR}/git"
 
 # NOTE: unable to map the following CMake package dependencies: sysfsgpio
 inherit cmake
 
-DEPENDS = "sysfsgpio"
+DEPENDS = "sysfsgpio zmqpp cppzmq zeromq"
 
 # Specify any options you want to pass to cmake using EXTRA_OECMAKE:
 EXTRA_OECMAKE = ""
 
+python do_display_banner() {
+    bb.plain("*  Install zmq GPIOread trough sysfs app ............    *");
+}
+
+addtask display_banner before do_build
