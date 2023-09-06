@@ -16,15 +16,17 @@ SRC_URI = "git://github.com/waelkarman/helloworldqml.git;user=waelkarman:ghp_jsK
 
 # Modify these as desired
 PV = "1.0+git${SRCPV}"
-SRCREV = "229227ed073df1610736fcdbf99504dc42c347b1"
+SRCREV = "e5db38c84c1d45cf7424e092f9572efa03d9113f"
 
 S = "${WORKDIR}/git"
 
-DEPENDS = "qtwayland zmqpp cppzmq zeromq"
+DEPENDS = " weston-init qtwayland zmqpp cppzmq zeromq"
 
 inherit qmake5
 
-FILES:${PN} += "/home/root/helloworldqml" 
+do_install:append() {
+    chown weston:weston ${D}/usr/bin/helloworldqml
+}
 
 python do_display_banner() {
     bb.plain("*  Install QML SENSORS application ............    *");
