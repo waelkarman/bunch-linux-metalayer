@@ -1,0 +1,9 @@
+[Unit]
+Description=Button reader service
+
+[Service]
+User=root
+ExecStart=/usr/bin/zmqread
+
+[Install]
+WantedBy=multi-user.target
