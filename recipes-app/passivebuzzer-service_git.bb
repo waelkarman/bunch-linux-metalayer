@@ -12,16 +12,16 @@
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
 
-SRC_URI = "git://git@github.com/waelkarman/networkchecker-service.git;protocol=ssh;branch=master"
+SRC_URI = "git://git@github.com/waelkarman/passivebuzzer-service.git;protocol=ssh;branch=master"
 
 # Modify these as desired
 PV = "1.0+git${SRCPV}"
-SRCREV = "3c6dd0aec295135ae365243eb7b55e55c3d79e2b"
+SRCREV = "30bef6aacc14d3a79a0f2a255a564012aafefc40"
 
 S = "${WORKDIR}/git"
 
 RDEPENDS:${PN} += "python3-pyzmq python3"
 
 do_install:append() {
-	install -Dm644 ${S}/publisher4PWM.py ${D}/${bindir}/publisher4PWM.py
+	install -Dm644 ${S}/passiveBuzzer.py ${D}/${bindir}/passiveBuzzer.py
 }
