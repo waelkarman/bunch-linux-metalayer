@@ -4,19 +4,16 @@ LICENSE = "CLOSED"
 #FILESEXTRAPATHS:prepend := "${THISDIR}:"
 DEPENDS += "weston weston-init"
 SRC_URI += "file://gear.png \
-            file://terminal.png \
+            file://terminal1.png \
             "
 
 FILES:${PN} = "/usr \
   /usr/share \
   /usr/share/icons \
-  /usr/share/icons/hicolor \
-  /usr/share/icons/hicolor/24x24 \
-  /usr/share/icons/hicolor/24x24/gear.png \
+  /usr/share/icons/weston \
   "
 
 do_install:append() {
-    install -d ${D}/usr/share/icons/hicolor/24x24
-    install -Dm 644 ${WORKDIR}/gear.png ${D}/usr/share/icons/hicolor/24x24/gear.png
-    install -Dm 644 ${WORKDIR}/gear.png ${D}/usr/share/icons/hicolor/24x24/terminal.png
+    install -Dm 644 ${WORKDIR}/gear.png ${D}/usr/share/weston/gear.png
+    install -Dm 644 ${WORKDIR}/terminal1.png ${D}/usr/share/weston/terminal1.png
 }
