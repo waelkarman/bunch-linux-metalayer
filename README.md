@@ -4,6 +4,11 @@ The project also acts as an entry point for those who want to approach the embed
 
 Bunch Linux was built over the Yocto project and it's currently based on "kirkston". Starting from poky distro day by day is getting way more customized by adding new feature, support more sensors and hardware. The project targets to be working out of the box. The sources had been defined in a manifest and will be collected by Google Repo Tool that will download the sources and setup the directory ready for start building the system. 
 
+# System
+L' Il sisitema utiliazza u-boot come bootloader gestendo la sequenza di avvio 
+systemd è stato usato come init program e i principali servizi di lettura dati e comunicazione sono stati aggiunti all avvio sul target principale multi-user.target. 
+per vedere tutta la sequenza di avvio del sistema: 
+systemctl list-units --type=service --all
 
 
 # GUI
@@ -26,8 +31,10 @@ In particolare al momento sono state esplorate le comunicazzioni di tipo :
 Requester - Replyer
 Pubblisher - Subscriber
 
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+In particolare viene mostrata nel seguente diagramma lo schema di comunicazione del app sensors installata gia sul sistema
 
+![alt text](https://github.com/waelkarman/bunch-linux-metalayer/blob/master/miscellaneous/sensorappcommunication.png?raw=true)
+L'app è realizzata in Qt mentre i servizi sono scritti in python e c++ 
 
 degli esempi di servizi utilizzanti la comunicazione interprocesso scritti in python e in c++
 sono presenti nelle app:
