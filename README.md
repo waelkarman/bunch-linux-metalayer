@@ -6,14 +6,11 @@ Bunch Linux was built over the Yocto project and it's currently based on "kirkst
 
 
 
-
-
-
 # GUI
 ### Weston
 Native weston interface had been customized with some patches to create a nice HMI and QtWayland had been installed to allow Qt applications to be managed by the compositor. 
 
-
+<<Arch image>>
 
 # Integration
 As mentioned the intent is not so much the production of applications that work on an Embedded System as the possibility of porting any application to an embedded one.
@@ -25,14 +22,19 @@ As mentioned the intent is not so much the production of applications that work 
 # IPC
 ### ZeroMQ
 services and applications exchanging messages through a flaxible interprocess communication based on ZeroMQ. This way applications written with any language could exchange rapidly informations and work as a single application. 
+In particolare al momento sono state esplorate le comunicazzioni di tipo :
+Requester - Replyer
+Pubblisher - Subscriber
+
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
 
 
-To setup the environment and start building the system should be sourced the setup-environment shell script that could be found in the source folder. 
-
-repo
-repo sync
-source setup-environment
-bitbake bunch-linux
+degli esempi di servizi utilizzanti la comunicazione interprocesso scritti in python e in c++
+sono presenti nelle app:
+zmqpubblisher
+zmqsubscriber 
+zmqrequester
+zmqreplyer
 
 
 # How to build
@@ -50,6 +52,20 @@ Getting the image it should be flashed through linux dd command or using third p
 
 
 # Develop your application
+sviluppa la tua applicazione e utilizza devtool per integrate il tuo repo
+devtool add <<url>>
+applica path al tuo repository per dei testing locali 
+devtool modify <<nome ricetta>>
+integra le motifiche nella ricetta modificata 
+devtool update-recipe <recipename>
+integra le tue modifiche come patch in un bbappend nel tuo layer custom:
+devtool update-recipe -a <layerpath> <recipename>
+resetta lo stato della tua ricetta
+devtool reset <recipename>
+
+
 per vedere tutti task eseguiti durante il processo di compilazione è possibile usare il comando 
 bitbake -g bunch-linux -u taskexp
 
+per leggere le variabili utilizzare nella costruzione ei singoli pacchetti 
+bitbake -e <ricetta> | grep WORKDIR=
