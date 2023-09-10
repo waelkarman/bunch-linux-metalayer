@@ -15,7 +15,8 @@ systemctl list-units --type=service --all
 ### Weston
 Native weston interface had been customized with some patches to create a nice HMI and QtWayland had been installed to allow Qt applications to be managed by the compositor. 
 
-<<Arch image>>
+![alt text](https://github.com/waelkarman/bunch-linux-metalayer/blob/master/miscellaneous/qtappwayland.png?raw=true)
+
 
 # Integration
 As mentioned the intent is not so much the production of applications that work on an Embedded System as the possibility of porting any application to an embedded one.
