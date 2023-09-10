@@ -15,7 +15,7 @@ systemctl list-units --type=service --all
 ### Weston
 Native weston interface had been customized with some patches to create a nice HMI and QtWayland had been installed to allow Qt applications to be managed by the compositor. 
 
-![alt text](https://github.com/waelkarman/bunch-linux-metalayer/blob/master/miscellaneous/qtappwayland.png?raw=true)
+![alt text](https://github.com/waelkarman/bunch-linux-metalayer/blob/master/miscellaneous/qtappwaylandalpha.png?raw=true)
 
 
 # Integration
@@ -34,7 +34,7 @@ Pubblisher - Subscriber
 
 In particolare viene mostrata nel seguente diagramma lo schema di comunicazione del app sensors installata gia sul sistema
 
-![alt text](https://github.com/waelkarman/bunch-linux-metalayer/blob/master/miscellaneous/sensorappcommunicationalpha.png?raw=true)
+![alt text](https://github.com/waelkarman/bunch-linux-metalayer/blob/master/miscellaneous/sensorappcommunication.png?raw=true)
 
 L'app è realizzata in Qt mentre i servizi sono scritti in python e c++ 
 
