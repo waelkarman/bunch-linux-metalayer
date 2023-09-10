@@ -33,8 +33,8 @@ As mentioned the intent is not so much the production of applications that work 
 ##### ZeroMQ
 services and applications exchanging messages through a flaxible interprocess communication based on [ZeroMQ](https://zeromq.org/). This way applications written with any language could exchange rapidly informations and work as a single application. 
 In particolare al momento sono state esplorate le comunicazzioni di tipo :<br/>
-Requester - Replyer<br/>
-Pubblisher - Subscriber<br/>
+Request–Reply<br/>
+Publish–Subscribe<br/>
 
 In particolare viene mostrata nel seguente diagramma lo schema di comunicazione del app sensors installata gia sul sistema
 
