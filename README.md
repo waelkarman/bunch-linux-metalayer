@@ -1,4 +1,4 @@
-# Bunch Linux purpose
+# Welcome to Bunch Linux
 Bunch linux is a project created for educational purposes. The goal is to learn how to build your own custom version of linux for Embedded Systems as well as the well-known goal of every developer, have fun!
 The project also acts as an entry point for those who want to approach the embedded world for business reasons or even just to fully understand the foundations of systems and applications starting from the lowest possible level. The Idea it's also to get in the end an easy way for fully customize an embedded device by getting the user able to customize eniterly the distro acting on a singular recipe.  
 
@@ -20,7 +20,7 @@ Native weston interface had been customized with some patches to create a nice H
 To get weston manage the qt application should be set the variable QT_QPA_PLATFORM to wayland or just using the option --platform wayland launching the app.
 
 # Integration
-As mentioned the intent is not so much the production of applications that work on an Embedded System as the possibility of porting any application to an embedded one.
+As mentioned the intent is not so much the production of applications that work on an Embedded System as the possibility of porting any application to an embedded one. Curretly integrated ones:
 1. C/C++ applications
 2. Python applications
 3. Qt/QML applications
@@ -28,7 +28,7 @@ As mentioned the intent is not so much the production of applications that work 
 
 # IPC
 ### ZeroMQ
-services and applications exchanging messages through a flaxible interprocess communication based on ZeroMQ. This way applications written with any language could exchange rapidly informations and work as a single application. 
+services and applications exchanging messages through a flaxible interprocess communication based on [ZeroMQ](https://zeromq.org/). This way applications written with any language could exchange rapidly informations and work as a single application. 
 In particolare al momento sono state esplorate le comunicazzioni di tipo :
 Requester - Replyer
 Pubblisher - Subscriber
