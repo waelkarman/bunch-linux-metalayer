@@ -20,7 +20,7 @@ Native weston interface had been customized with some patches to create a nice H
 To get *weston* manage the qt application should be set the variable *QT_QPA_PLATFORM* to wayland or just using the option *--platform wayland* launching the app.
 
 ## Audio
-##### ALSA is the (..)
+##### ALSA + PipeWire are the (..)
 
 # Integration
 As mentioned the intent is not so much the production of applications that work on an Embedded System as the possibility of porting any application to an embedded one. Curretly integrated ones:<br/>
