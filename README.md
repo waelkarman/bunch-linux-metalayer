@@ -2,22 +2,22 @@
 Bunch linux is a project created for educational purposes. The goal is to learn how to build your own custom version of linux for Embedded Systems as well as the well-known goal of every developer, have fun!
 The project also acts as an entry point for those who want to approach the embedded world for business reasons or even just to fully understand the foundations of systems and applications starting from the lowest possible level. The Idea it's also to get in the end an easy way for fully customize an embedded device by getting the user able to customize eniterly the distro acting on a singular recipe.  
 
-Bunch Linux was built over the Yocto project and it's currently based on "kirkston". Starting from poky distro day by day is getting way more customized by adding new feature, support more sensors and hardware. The project targets to be working out of the box. The sources had been defined in a manifest and will be collected by Google Repo Tool that will download the sources and setup the directory ready for start building the system. 
+Bunch Linux was built over the Yocto project and it's currently based on *kirkstone*. Starting from poky distro day by day is getting way more customized by adding new feature, support more sensors and hardware. The project targets to be working out of the box. The sources had been defined in a manifest and will be collected by *Google* *Repo* *Tool* that will download the sources and setup the directory ready for start building the system. 
 
 ## System
 L' Il sisitema utiliazza u-boot come bootloader gestendo la sequenza di avvio 
-systemd è stato usato come init program e i principali servizi di lettura dati e comunicazione sono stati aggiunti all avvio sul target principale multi-user.target. 
+*systemd* è stato usato come init program e i principali servizi di lettura dati e comunicazione sono stati aggiunti all avvio sul target principale *multi-user.target*. 
 per vedere tutta la sequenza di avvio del sistema: <br/>
 > systemctl list-units --type=service --all
 
 
 ## GUI
 ##### Weston
-Native weston interface had been customized with some patches to create a nice HMI and QtWayland had been installed to allow Qt applications to be managed by the compositor. 
+Native weston interface had been customized with some patches to create a nice HMI and *QtWayland* had been installed to allow Qt applications to be managed by the compositor. 
 
 ![alt text](https://github.com/waelkarman/bunch-linux-metalayer/blob/master/miscellaneous/qtappwaylandalpha.png?raw=true)
 
-To get weston manage the qt application should be set the variable QT_QPA_PLATFORM to wayland or just using the option --platform wayland launching the app.
+To get *weston* manage the qt application should be set the variable *QT_QPA_PLATFORM* to wayland or just using the option *--platform wayland* launching the app.
 
 ## Audio
 ##### ALSA is the (..)
@@ -51,19 +51,19 @@ zmqreplyer<br/>
 
 
 ## How to build
-bunch-linux derives directly from poky by extending and customizing the known distro already included in the Yocto project if necessary.
-Google repo tool is needed to collect the sources and start the build process. To setup the environment and start building the system should be sourced the setup-environment shell script that could be found in the source folder.  To build from sources you can init the repo to the manifest and synchronize the sources easily. Repo tool will download the sources and configure the environment for you.<br/> 
+bunch-linux is based on poky and extending and customizing the known distro already included in the Yocto project if necessary.
+*Google* *repo* *tool* is needed to collect the sources and start the build process. To setup the environment and start building the system should be sourced the *setup-environment* shell script that could be found in the source folder.  To build from sources you can init the repo to the *manifest* and synchronize the sources easily. Repo tool will download the sources and configure the environment for you.<br/> 
 > repo \<manifest-url\><br/>
 > repo sync<br/>
  
-Once the environment is properly set you should source to the setup-environment script and then launch the compilation of the distro using bitbake yocto tool.
+Once the environment is properly set you should source to the *setup-environment* script and then launch the compilation of the distro using *bitbake* yocto tool.
 > source setup-environment<br/>
 > bitbake bunch-linux<br/>
 
 The compiled image will be located into the build folder at the following path:
 > /build/tmp/deploy/images/raspberrypi4-64
 
-Getting the image it should be flashed through linux dd command or using third party software like BalenaEtcher, Raspberry Imager.
+Getting the image it should be flashed through linux dd command or using third party software like *BalenaEtcher*, *Raspberry* *Imager*.
 
 
 ## Develop and build your application
