@@ -66,7 +66,7 @@ The compiled image will be located into the build folder at the following path:
 Getting the image it should be flashed through linux dd command or using third party software like BalenaEtcher, Raspberry Imager.
 
 
-## Develop your application
+## Develop and build your application
 
 sviluppa la tua applicazione e utilizza devtool per integrate il tuo repo
 > devtool add \<url\> 
