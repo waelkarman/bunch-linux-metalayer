@@ -7,8 +7,8 @@ Bunch Linux was built over the Yocto project and it's currently based on "kirkst
 ## System
 L' Il sisitema utiliazza u-boot come bootloader gestendo la sequenza di avvio 
 systemd è stato usato come init program e i principali servizi di lettura dati e comunicazione sono stati aggiunti all avvio sul target principale multi-user.target. 
-per vedere tutta la sequenza di avvio del sistema: 
-systemctl list-units --type=service --all
+per vedere tutta la sequenza di avvio del sistema: <br/>
+> systemctl list-units --type=service --all
 
 
 ## GUI
@@ -53,32 +53,39 @@ zmqreplyer<br/>
 ## How to build
 bunch-linux derives directly from poky by extending and customizing the known distro already included in the Yocto project if necessary.
 Google repo tool is needed to collect the sources and start the build process. To setup the environment and start building the system should be sourced the setup-environment shell script that could be found in the source folder.  To build from sources you can init the repo to the manifest and synchronize the sources easily. Repo tool will download the sources and configure the environment for you.<br/> 
-<< repo
-repo sync
-source setup-environment
-bitbake bunch-linux >>
+> repo \<manifest-url\><br/>
+> repo sync<br/>
+ 
 Once the environment is properly set you should source to the setup-environment script and then launch the compilation of the distro using bitbake yocto tool.
-<<codice >>
-The compiled image will be located into the build folder at the following path:<br/>
-"""/build/tmp/deploy/images/raspberrypi4-64"""<br/>
+> source setup-environment<br/>
+> bitbake bunch-linux<br/>
+
+The compiled image will be located into the build folder at the following path:
+> /build/tmp/deploy/images/raspberrypi4-64
+
 Getting the image it should be flashed through linux dd command or using third party software like BalenaEtcher, Raspberry Imager.
 
 
 ## Develop your application
-sviluppa la tua applicazione e utilizza devtool per integrate il tuo repo<br/>
-devtool add <<url>><br/>
-applica path al tuo repository per dei testing locali <br/>
-devtool modify <<nome ricetta>><br/>
-integra le motifiche nella ricetta modificata <br/>
-devtool update-recipe <recipename><br/>
-integra le tue modifiche come patch in un bbappend nel tuo layer custom:<br/>
-devtool update-recipe -a <layerpath> <recipename><br/>
-resetta lo stato della tua ricetta<br/>
-devtool reset <recipename><br/>
+
+sviluppa la tua applicazione e utilizza devtool per integrate il tuo repo
+> devtool add \<url\> 
+
+applica path al tuo repository per dei testing locali 
+> devtool modify \<recipename\>
+
+integra le motifiche nella ricetta modificata 
+> devtool update-recipe \<recipename\>
+
+integra le tue modifiche come patch in un bbappend nel tuo layer custom:
+> devtool update-recipe -a \<layerpath\> \<recipename\>
+
+resetta lo stato della tua ricetta
+> devtool reset \<recipename\>
 
 
 per vedere tutti task eseguiti durante il processo di compilazione è possibile usare il comando 
-bitbake -g bunch-linux -u taskexp
+> bitbake -g bunch-linux -u taskexp 
 
 per leggere le variabili utilizzare nella costruzione ei singoli pacchetti 
-bitbake -e <ricetta> | grep WORKDIR=
+> bitbake -e \<recipename\> | grep WORKDIR=
