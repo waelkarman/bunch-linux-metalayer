@@ -1,26 +1,26 @@
 # Welcome to Bunch Linux
-Bunch linux is a project created for educational purposes. The goal is to learn how to build your own custom version of linux for Embedded Systems as well as the well-known goal of every developer, have fun!
-The project also acts as an entry point for those who want to approach the embedded world for business reasons or even just to fully understand the foundations of systems and applications starting from the lowest possible level. The Idea it's also to get in the end an easy way for fully customize an embedded device by getting the user able to customize eniterly the distro acting on a singular recipe.  
+Bunch linux is a project created for learning purposes. The goal is to learn how to build your own custom version of linux for Embedded Systems as well as the well-known goal of every developer, have fun!
+The idea is to fully understand the foundations of systems and applications starting from the lowest possible level. The aim it's also to get in the end an easy way for fully customize an embedded device.  
 
-Bunch Linux was built over the Yocto project and it's currently based on *kirkstone*. Starting from poky distro day by day is getting way more customized by adding new feature, support more sensors and hardware. The project targets to be working out of the box. The sources had been defined in a manifest and will be collected by *Google* *Repo* *Tool* that will download the sources and setup the directory ready for start building the system. 
+Bunch Linux was built over the Yocto project and it's currently based on *kirkstone*. Starting from poky distro is slowly getting way more customized by adding new feature, support more sensors and hardware. The project targets to be working out of the box. The sources had been defined in a manifest and will be collected by *Google* *Repo* *Tool* that will download the sources and setup the directory ready for start building the system. 
 
 ## System
-L' Il sisitema utiliazza u-boot come bootloader gestendo la sequenza di avvio 
-*systemd* è stato usato come init program e i principali servizi di lettura dati e comunicazione sono stati aggiunti all avvio sul target principale *multi-user.target*. 
-per vedere tutta la sequenza di avvio del sistema: <br/>
+The system uses U-Boot as the bootloader, handling the boot sequence. *systemd* has been used as the init program, and the primary data reading and communication services have been added to startup depending on the main target *multi-user.target*.
+To view the entire system boot services, you can use the following command: <br/>
 > systemctl list-units --type=service --all
 
 
-## GUI
+## HMI
 ##### Weston
 Native weston interface had been customized with some patches to create a nice HMI and *QtWayland* had been installed to allow Qt applications to be managed by the compositor. 
 
-![alt text](https://github.com/waelkarman/bunch-linux-metalayer/blob/master/miscellaneous/qtappwaylandalpha.png?raw=true)
+![alt text](https://github.com/waelkarman/bunch-linux-manifests/blob/master/miscellaneous/qtappwaylandalpha.png?raw=true)
 
 To get *weston* manage the qt application should be set the variable *QT_QPA_PLATFORM* to wayland or just using the option *--platform wayland* launching the app.
 
 ## Audio
-##### ALSA + PipeWire are the (..)
+##### ALSA + PipeWire 
+WORK IN PROGRESS (..)
 
 # Integration
 As mentioned the intent is not so much the production of applications that work on an Embedded System as the possibility of porting any application to an embedded one. Curretly integrated ones:<br/>
@@ -31,19 +31,24 @@ As mentioned the intent is not so much the production of applications that work 
 
 ## IPC
 ##### ZeroMQ
-services and applications exchanging messages through a flaxible interprocess communication based on [ZeroMQ](https://zeromq.org/). This way applications written with any language could exchange rapidly informations and work as a single application. 
-In particolare al momento sono state esplorate le comunicazzioni di tipo :<br/>
+services and applications exchanging messages through a flaxible interprocess communication based on [ZeroMQ](https://zeromq.org/). This way applications written with any language could exchange rapidly informations and work as a single application. The interesting aspect of ZMQ is that the message exchanging is based on network protocols that allow to any node over the network to be reached. 
+For the specific case the following are the available messaging exchange models:<br/>
 Request–Reply<br/>
 Publish–Subscribe<br/>
 
-In particolare viene mostrata nel seguente diagramma lo schema di comunicazione del app sensors installata gia sul sistema
+In the following diagram, the communication schema of the sensors-app already installed on the system is shown.
 
-![alt text](https://github.com/waelkarman/bunch-linux-metalayer/blob/master/miscellaneous/sensorappcommunication.png?raw=true)
+![alt text](https://github.com/waelkarman/bunch-linux-manifests/blob/master/miscellaneous/sensorappcommunication.png?raw=true)
 
-L'app è realizzata in Qt mentre i servizi sono scritti in python e c++ 
+The *sensor-app* allows the users to check the status of the sensors and to control it directly from the GUI.
 
-degli esempi di servizi utilizzanti la comunicazione interprocesso scritti in python e in c++
-sono presenti nelle app:<br/>
+The app is developed in Qt, while the services are implemented in Python and C++. The Python services rely on the pi-blaster and raspi-gpio libraries, while the C++ services utilize a custom library that directly writes to the SYS filesystem of the operating system, corresponding to the following operations:
+> echo [numGPIO] \> /sys/class/gpio/export<br/>
+> echo out > /sys/class/gpio/gpio[numGPIO]/direction<br/>
+> echo 1 > /sys/class/gpio/gpio[numGPIO]/value<br/>
+
+
+Here are examples of services utilizing interprocess communication (IPC) written in both Python and C++ that are included in the apps:<br/>
 zmqpubblisher<br/>
 zmqsubscriber<br/>
 zmqrequester<br/>
@@ -53,7 +58,7 @@ zmqreplyer<br/>
 ## How to build
 bunch-linux is based on poky and extending and customizing the known distro already included in the Yocto project if necessary.
 *Google* *repo* *tool* is needed to collect the sources and start the build process. To setup the environment and start building the system should be sourced the *setup-environment* shell script that could be found in the source folder.  To build from sources you can init the repo to the *manifest* and synchronize the sources easily. Repo tool will download the sources and configure the environment for you.<br/> 
-> repo \<manifest-url\><br/>
+> repo init -u https://\<TOKEN\>@github.com/waelkarman/bunch-linux-manifests.git -m v6.3.0.xml -b master<br/>
 > repo sync<br/>
  
 Once the environment is properly set you should source to the *setup-environment* script and then launch the compilation of the distro using *bitbake* yocto tool.
@@ -68,24 +73,24 @@ Getting the image it should be flashed through linux dd command or using third p
 
 ## Develop and build your application
 
-sviluppa la tua applicazione e utilizza devtool per integrate il tuo repo
+After developing an app into a git repo use the following command to add it to the system:
 > devtool add \<url\> 
 
-applica path al tuo repository per dei testing locali 
+If you d'like to do some local test you can do it by using devtool as following:
 > devtool modify \<recipename\>
 
-integra le motifiche nella ricetta modificata 
+To integrate your local changes into the original recipe as patch use devtool as following:
 > devtool update-recipe \<recipename\>
 
-integra le tue modifiche come patch in un bbappend nel tuo layer custom:
+To integrate your local changes into another layer as patch to a recipe use devtool as following:
 > devtool update-recipe -a \<layerpath\> \<recipename\>
 
-resetta lo stato della tua ricetta
+To reset the status of your recipe:
 > devtool reset \<recipename\>
 
 
-per vedere tutti task eseguiti durante il processo di compilazione è possibile usare il comando 
+To check all the task through the compilation process : 
 > bitbake -g bunch-linux -u taskexp 
 
-per leggere le variabili utilizzare nella costruzione ei singoli pacchetti 
-> bitbake -e \<recipename\> | grep WORKDIR=
+To read the environment of a specific recipe use bitbake as following:
+> bitbake -e \<recipename\> | grep \<VARIBLE\>
