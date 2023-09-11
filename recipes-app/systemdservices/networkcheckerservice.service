@@ -3,7 +3,7 @@ Description=Networkchecker service
 
 [Service]
 User=root
-ExecStart=python3 /usr/bin/publisher4PWM.py
+ExecStart=python3 /usr/bin/networkchecker.py
 
 [Install]
 WantedBy=multi-user.target

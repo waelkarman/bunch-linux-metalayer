@@ -16,7 +16,7 @@ SRC_URI = "git://github.com/waelkarman/sensors-app.git;user=waelkarman:ghp_jsKwM
 
 # Modify these as desired
 PV = "1.0+git${SRCPV}"
-SRCREV = "b4346daf6d197d6e275ec53aab7a3087d0647e01"
+SRCREV = "6113ea1304e943e4fd9bd39b41552f311a2c8496"
 
 S = "${WORKDIR}/git"
 

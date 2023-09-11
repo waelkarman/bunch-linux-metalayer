@@ -16,7 +16,7 @@ SRC_URI = "git://git@github.com/waelkarman/gpio-read-sysfs-service.git;user=wael
 
 # Modify these as desired
 PV = "1.0+git${SRCPV}"
-SRCREV = "3dd2d0395ce220ea9987088e91bc0afb086d0ef1"
+SRCREV = "d41e6773e1d96c269ad4fe0a4fa2b513ce1ac0a5"
 
 S = "${WORKDIR}/git"
 

@@ -16,14 +16,14 @@ SRC_URI = "git://git@github.com/waelkarman/networkchecker-service.git;user=waelk
 
 # Modify these as desired
 PV = "1.0+git${SRCPV}"
-SRCREV = "3c6dd0aec295135ae365243eb7b55e55c3d79e2b"
+SRCREV = "04032983d53c4e76760b44c10b49b9539555a499"
 
 S = "${WORKDIR}/git"
 
 RDEPENDS:${PN} += "python3-pyzmq python3"
 
 do_install:append() {
-	install -Dm644 ${S}/publisher4PWM.py ${D}/${bindir}/publisher4PWM.py
+	install -Dm644 ${S}/networkchecker.py ${D}/${bindir}/networkchecker.py
 }
 
 
