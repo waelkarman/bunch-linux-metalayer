@@ -26,7 +26,7 @@ inherit cmake
 EXTRA_OECMAKE = ""
 
 python do_display_banner() {
-    bb.plain("*  Install c++ helloworld test application ............   *");
+    bb.plain("*  Install c++ helloworld ............   *");
 }
 
-addtask display_banner before do_build
+addtask display_banner after do_install

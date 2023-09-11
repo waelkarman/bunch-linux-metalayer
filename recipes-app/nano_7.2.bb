@@ -39,7 +39,7 @@ inherit pkgconfig gettext autotools
 EXTRA_OECONF = ""
 
 python do_display_banner() {
-    bb.plain("*  Install nano text editor application ............    *");
+    bb.plain("*  Install nano text editor ............    *");
 }
 
-addtask display_banner before do_build
+addtask display_banner after do_install

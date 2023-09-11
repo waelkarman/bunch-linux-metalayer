@@ -30,7 +30,7 @@ EXTRA_OECMAKE = ""
 FILES:${PN} = "/usr/lib/libzmqpp.so"
 
 python do_display_banner() {
-    bb.plain("*  Install libzmqpp ............    *");
+    bb.plain("*  Install zmqpp ............    *");
 }
 
-addtask display_banner before do_build
+addtask display_banner after do_install

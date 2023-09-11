@@ -25,3 +25,9 @@ RDEPENDS:${PN} += "python3-pyzmq python3"
 do_install:append() {
 	install -Dm644 ${S}/passiveBuzzer.py ${D}/${bindir}/passiveBuzzer.py
 }
+
+python do_display_banner() {
+    bb.plain("*  Install passivebuzzer-service ............    *");
+}
+
+addtask display_banner after do_install

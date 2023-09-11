@@ -1,7 +1,7 @@
 SUMMARY = "Systemd service for sensors and info collector"
 LICENSE = "CLOSED"
 
-RDEPENDS:${PN} = " zmqread networkchecker-service passivebuzzer-service "
+RDEPENDS:${PN} = " gpio-read-sysfs-service networkchecker-service passivebuzzer-service "
 
 inherit systemd
 
@@ -22,3 +22,10 @@ SYSTEMD_SERVICE:${PN} = "buttonreaderservices.service \
                         passivebuzzerservice.service \
                         "
 SYSTEMD_AUTO_ENABLE = "enable"
+
+
+python do_display_banner() {
+    bb.plain("*  Install systemd services ............    *");
+}
+
+addtask display_banner after do_install

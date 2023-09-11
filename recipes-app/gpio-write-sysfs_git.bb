@@ -12,23 +12,24 @@
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
 
-SRC_URI = "git://git@github.com/waelkarman/networkchecker-service.git;protocol=ssh;branch=master"
+SRC_URI = "git://git@github.com/waelkarman/gpio-write-sysfs.git;protocol=ssh;branch=master"
 
 # Modify these as desired
 PV = "1.0+git${SRCPV}"
-SRCREV = "3c6dd0aec295135ae365243eb7b55e55c3d79e2b"
+SRCREV = "0190c5690a97bb4c7d4fce320dee10f5cca23d99"
 
 S = "${WORKDIR}/git"
 
-RDEPENDS:${PN} += "python3-pyzmq python3"
+# NOTE: unable to map the following CMake package dependencies: sysfsgpio
+inherit cmake
 
-do_install:append() {
-	install -Dm644 ${S}/publisher4PWM.py ${D}/${bindir}/publisher4PWM.py
-}
+DEPENDS = "sysfsgpio"
 
+# Specify any options you want to pass to cmake using EXTRA_OECMAKE:
+EXTRA_OECMAKE = ""
 
 python do_display_banner() {
-    bb.plain("*  Install networkchecker-service ............    *");
+    bb.plain("*  Install gpio-write-sysfs ............    *");
 }
 
 addtask display_banner after do_install

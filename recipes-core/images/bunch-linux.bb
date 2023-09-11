@@ -6,10 +6,12 @@ inherit core-image
 DISTRO_FEATURES += " alsa systemd opengl wayland"
 IMAGE_FEATURES += " weston ssh-server-dropbear tools-sdk dev-pkgs debug-tweaks package-management hwcodecs"
 
-IMAGE_INSTALL += " systemd tree i2c-tools nano helloworld helloworldqt helloworldqml hello-module" 
+IMAGE_INSTALL += " systemd tree i2c-tools nano" 
 IMAGE_INSTALL += " raspi-gpio pi-blaster libgpiod-dev rpi-gpio rpio"
 IMAGE_INSTALL += " python3-pyzmq python3 python3-pip"
-IMAGE_INSTALL += " systemdservices zmqrequest zmqreply zmqpublish zmqsubscribe zmqwrite zmqread networkchecker-service icon-weston"
+IMAGE_INSTALL += " zmqrequest zmqreply zmqpublish zmqsubscribe"
+IMAGE_INSTALL += " helloworld hello-module"
+IMAGE_INSTALL += " sensors-app systemdservices gpio-write-sysfs passivebuzzer-service gpio-read-sysfs-service networkchecker-service icon-weston"
  
 # Not needed anymore since the app is launched by weston directly and the env it's in the launching command into the weston.ini
 # env-config

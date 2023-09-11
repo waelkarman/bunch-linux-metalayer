@@ -12,23 +12,24 @@
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
 
-SRC_URI = "git://git@github.com/waelkarman/networkchecker-service.git;protocol=ssh;branch=master"
+SRC_URI = "git://github.com/waelkarman/sensors-app.git;user=waelkarman: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;protocol=https;branch=ipc-integration"
 
 # Modify these as desired
 PV = "1.0+git${SRCPV}"
-SRCREV = "3c6dd0aec295135ae365243eb7b55e55c3d79e2b"
+SRCREV = "b4346daf6d197d6e275ec53aab7a3087d0647e01"
 
 S = "${WORKDIR}/git"
 
-RDEPENDS:${PN} += "python3-pyzmq python3"
+DEPENDS = " weston-init qtwayland zmqpp cppzmq zeromq"
+
+inherit qmake5
 
 do_install:append() {
-	install -Dm644 ${S}/publisher4PWM.py ${D}/${bindir}/publisher4PWM.py
+    chown weston:weston ${D}/usr/bin/helloworldqml
 }
 
-
 python do_display_banner() {
-    bb.plain("*  Install networkchecker-service ............    *");
+    bb.plain("*  Install sensors-app ............    *");
 }
 
 addtask display_banner after do_install

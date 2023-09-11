@@ -27,4 +27,4 @@ python do_display_banner() {
     bb.plain("*  Install kernel hello module  ............   *");
 }
 
-addtask display_banner before do_build
+addtask display_banner after do_install

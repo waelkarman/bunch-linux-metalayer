@@ -29,7 +29,7 @@ inherit cmake
 EXTRA_OECMAKE = ""
 
 python do_display_banner() {
-    bb.plain("*  Install zmqReply app ............    *");
+    bb.plain("*  Install IPC-TEST-APP ............    *");
 }
 
-addtask display_banner before do_build
+addtask display_banner after do_install
