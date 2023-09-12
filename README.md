@@ -1,14 +1,14 @@
 # Welcome to Bunch Linux
-Bunch linux is a project created for learning purposes. The goal is to learn how to build your own custom version of linux for Embedded Systems as well as the well-known goal of every developer, have fun!
+![alt text](https://github.com/waelkarman/bunch-linux-manifests/blob/master/miscellaneous/wayland-screenshot-turtle.png?raw=true)
+Bunch Linux is a project created for learning purposes. The goal is to learn how to build your own custom version of Linux for Embedded Systems as well as the well-known goal of every developer, have fun!
 The idea is to fully understand the foundations of systems and applications starting from the lowest possible level. The aim it's also to get in the end an easy way for fully customize an embedded device.  
 
-Bunch Linux was built over the Yocto project and it's currently based on *kirkstone*. Starting from poky distro is slowly getting way more customized by adding new feature, support more sensors and hardware. The project targets to be working out of the box. The sources had been defined in a manifest and will be collected by *Google* *Repo* *Tool* that will download the sources and setup the directory ready for start building the system. 
+Bunch Linux was built over the Yocto project and it's currently based on *kirkstone*. Starting from poky distro is slowly getting way more customized by adding new feature, support more sensors and hardware. The project targets to be working out of the box. The sources had been defined in a manifest and will be collected by *Google* *Repo* *Tool* that will download the sources and setup the directory ready to start building the system. 
 
 ## System
 The system uses U-Boot as the bootloader, handling the boot sequence. *systemd* has been used as the init program, and the primary data reading and communication services have been added to startup depending on the main target *multi-user.target*.
 To view the entire system boot services, you can use the following command: <br/>
 > systemctl list-units --type=service --all
-
 
 ## HMI
 ##### Weston
@@ -23,7 +23,7 @@ To get *weston* manage the qt application should be set the variable *QT_QPA_PLA
 WORK IN PROGRESS (..)
 
 # Integration
-As mentioned the intent is not so much the production of applications that work on an Embedded System as the possibility of porting any application to an embedded one. Curretly integrated ones:<br/>
+As mentioned, the intent is not so much the production of applications that work on an Embedded System as the possibility of porting any application to an embedded one. Currently integrated ones:<br/>
 1. C/C++ applications<br/>
 2. Python applications<br/>
 3. Qt/QML applications<br/>
@@ -31,8 +31,8 @@ As mentioned the intent is not so much the production of applications that work 
 
 ## IPC
 ##### ZeroMQ
-services and applications exchanging messages through a flaxible interprocess communication based on [ZeroMQ](https://zeromq.org/). This way applications written with any language could exchange rapidly informations and work as a single application. The interesting aspect of ZMQ is that the message exchanging is based on network protocols that allow to any node over the network to be reached. 
-For the specific case the following are the available messaging exchange models:<br/>
+services and applications exchanging messages through a flexible interprocess communication based on [ZeroMQ](https://zeromq.org/). This way applications written with any language could exchange rapidly information and work as a single application. The interesting aspect of ZMQ is that the message exchanging is based on network protocols that allow any node over the network to be reached. 
+For the specific case, the following are the available messaging exchange models:<br/>
 Request–Reply<br/>
 Publish–Subscribe<br/>
 
@@ -40,7 +40,7 @@ In the following diagram, the communication schema of the sensors-app already in
 
 ![alt text](https://github.com/waelkarman/bunch-linux-manifests/blob/master/miscellaneous/sensorappcommunication.png?raw=true)
 
-The *sensor-app* allows the users to check the status of the sensors and to control it directly from the GUI.
+Similar to any advanced embedded device like an infotainment, a dashboard and so forth the *sensor-app* allows the users to check the status of the supported sensors and to control it directly from the GUI. 
 
 The app is developed in Qt, while the services are implemented in Python and C++. The Python services rely on the pi-blaster and raspi-gpio libraries, while the C++ services utilize a custom library that directly writes to the SYS filesystem of the operating system, corresponding to the following operations:
 > echo [numGPIO] \> /sys/class/gpio/export<br/>
@@ -49,10 +49,10 @@ The app is developed in Qt, while the services are implemented in Python and C++
 
 
 Here are examples of services utilizing interprocess communication (IPC) written in both Python and C++ that are included in the apps:<br/>
-zmqpubblisher<br/>
-zmqsubscriber<br/>
-zmqrequester<br/>
-zmqreplyer<br/>
+* zmqpubblisher<br/>
+* zmqsubscriber<br/>
+* zmqrequester<br/>
+* zmqreplyer<br/>
 
 
 ## How to build
