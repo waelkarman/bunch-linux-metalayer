@@ -23,7 +23,7 @@ To get *weston* manage the qt application should be set the variable *QT_QPA_PLA
 WORK IN PROGRESS (..)
 
 # Integration
-As mentioned, the intent is not so much the production of applications that work on an Embedded System as the possibility of porting any application to an embedded one. Currently integrated ones:<br/>
+As mentioned, the intent the possibility of porting any application to an embedded one. Currently integrated ones:<br/>
 1. C/C++ applications<br/>
 2. Python applications<br/>
 3. Qt/QML applications<br/>
