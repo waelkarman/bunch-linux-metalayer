@@ -16,7 +16,7 @@ SRC_URI = "git://git@github.com/waelkarman/passivebuzzer-service.git;user=waelka
 
 # Modify these as desired
 PV = "1.0+git${SRCPV}"
-SRCREV = "30bef6aacc14d3a79a0f2a255a564012aafefc40"
+SRCREV = "c87c345161d87432348e1cb605a70f96ebe0819f"
 
 S = "${WORKDIR}/git"
 
