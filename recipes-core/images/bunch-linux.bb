@@ -3,7 +3,6 @@ LICENSE = "MIT"
 
 inherit core-image
 
-#DISTRO_FEATURES += " systemd opengl wayland"
 IMAGE_FEATURES += " weston ssh-server-dropbear tools-sdk dev-pkgs debug-tweaks package-management hwcodecs debug-tweaks"
 
 IMAGE_INSTALL += " systemd tree i2c-tools nano" 
