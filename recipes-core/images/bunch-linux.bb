@@ -5,7 +5,7 @@ inherit core-image
 
 IMAGE_FEATURES += " weston ssh-server-dropbear tools-sdk dev-pkgs debug-tweaks package-management hwcodecs debug-tweaks"
 
-IMAGE_INSTALL += " systemd tree i2c-tools nano" 
+IMAGE_INSTALL += " systemd tree i2c-tools nano rauc" 
 IMAGE_INSTALL += " raspi-gpio pi-blaster libgpiod-dev rpi-gpio rpio"
 IMAGE_INSTALL += " python3-pyzmq python3 python3-pip"
 IMAGE_INSTALL += " zmqrequest zmqreply zmqpublish zmqsubscribe"
