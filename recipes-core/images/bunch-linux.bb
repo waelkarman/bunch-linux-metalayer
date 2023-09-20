@@ -3,7 +3,7 @@ LICENSE = "MIT"
 
 inherit core-image
 
-IMAGE_FEATURES += " weston ssh-server-dropbear tools-sdk dev-pkgs debug-tweaks package-management hwcodecs debug-tweaks"
+IMAGE_FEATURES += " weston ssh-server-dropbear tools-sdk dev-pkgs debug-tweaks package-management hwcodecs"
 
 IMAGE_INSTALL += " systemd tree i2c-tools nano rauc" 
 IMAGE_INSTALL += " raspi-gpio pi-blaster libgpiod-dev rpi-gpio rpio"
