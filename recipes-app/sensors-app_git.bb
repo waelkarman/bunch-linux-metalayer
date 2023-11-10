@@ -12,7 +12,7 @@
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
 
-SRC_URI = "git://github.com/waelkarman/sensors-app.git;user=waelkarman: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;protocol=https;branch=ipc-integration"
+SRC_URI = "git://github.com/waelkarman/sensors-app.git;user=waelkarman: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;protocol=https;branch=ipc-integration"
 
 # Modify these as desired
 PV = "1.0+git${SRCPV}"
