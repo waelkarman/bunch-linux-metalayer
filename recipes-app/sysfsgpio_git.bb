@@ -12,7 +12,7 @@
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
 
-SRC_URI = "git://git@github.com/waelkarman/Raspberry-Pi-Sysfs-GPIO-C-Library.git;user=waelkarman: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;protocol=ssh;branch=master"
+SRC_URI = "git://git@github.com/waelkarman/Raspberry-Pi-Sysfs-GPIO-C-Library.git;user=waelkarman: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;protocol=ssh;branch=master"
 
 # Modify these as desired
 PV = "1.0+git${SRCPV}"
