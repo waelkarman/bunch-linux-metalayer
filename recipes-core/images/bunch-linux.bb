@@ -3,7 +3,7 @@ LICENSE = "MIT"
 
 inherit core-image
 inherit populate_sdk_qt5
-IMAGE_FEATURES += " weston ssh-server-openssh tools-sdk dev-pkgs debug-tweaks package-management hwcodecs tools-debug"
+IMAGE_FEATURES += " weston ssh-server-openssh tools-sdk debug-tweaks package-management hwcodecs tools-debug"
 
 IMAGE_INSTALL += " pi-bluetooth bluez5 iw wpa-supplicant linux-firmware-bcm43455 busybox-udhcpc rsync"
 IMAGE_INSTALL += " systemd tree i2c-tools nano rauc" 
