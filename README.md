@@ -1,6 +1,4 @@
 # bunch-linux-metalayer
-Bunch linux is a project created for learning purposes. The idea is to fully understand the foundations of systems and applications starting from the lowest possible level. 
-
 
 Notes:
 WLAN connection is working but should be set up manually:<br>
