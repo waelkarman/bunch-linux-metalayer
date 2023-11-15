@@ -1,7 +1,8 @@
 # bunch-linux-metalayer
 
+## WiFi 
 Notes:
-WLAN connection is working but should be set up manually:<br>
+connection is working but should be set up manually:<br>
 - list interfaces:<br>
 > ip link show<br>
 - enable wlan interface:<br>
