@@ -14,7 +14,7 @@ populate /etc/wpa_supplicant.conf like:
 > update_config=1<br>
 > 
 > network={<br>
->         ssid="FRITZ!Box 7583 KW"<br>
+>         ssid="insert here your SSID"<br>
 >         scan_ssid=1<br>
 >         key_mgmt=WPA-PSK<br>
 >         psk="insert here your password"<br>
