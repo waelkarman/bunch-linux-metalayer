@@ -3,10 +3,11 @@ Bunch linux is a project created for learning purposes. The idea is to fully und
 
 
 Notes:
-To develop using qtcreator directly looks needed to add inherit populate_sdk_qt5 into the image and TOOL_SDK:append " qtbase qt declarative" into the local.conf
-
-- list interfaces: ip link show
-- enable wlan interface: ip link set wlan0 up
+WLAN connection is working but should be set up manually:
+- list interfaces:
+> ip link show
+- enable wlan interface:
+> ip link set wlan0 up
 
 populate /etc/wpa_supplicant.conf like:
 
@@ -18,11 +19,11 @@ populate /etc/wpa_supplicant.conf like:
 >         ssid="FRITZ!Box 7583 KW"<br>
 >         scan_ssid=1<br>
 >         key_mgmt=WPA-PSK<br>
->         psk="23587684732970795127"<br>
+>         psk="insert here your password"<br>
 > }<br>
 
-- wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant.conf
-- udhcpc -i wlan0
+> wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant.conf
+> udhcpc -i wlan0
 
 
 For cross compiling add to image feature: tools-sdk <br>
