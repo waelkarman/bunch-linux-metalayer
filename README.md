@@ -3,11 +3,11 @@ Bunch linux is a project created for learning purposes. The idea is to fully und
 
 
 Notes:
-WLAN connection is working but should be set up manually:
-- list interfaces:
-> ip link show
-- enable wlan interface:
-> ip link set wlan0 up
+WLAN connection is working but should be set up manually:<br>
+- list interfaces:<br>
+> ip link show<br>
+- enable wlan interface:<br>
+> ip link set wlan0 up<br>
 
 populate /etc/wpa_supplicant.conf like:
 
@@ -22,8 +22,8 @@ populate /etc/wpa_supplicant.conf like:
 >         psk="insert here your password"<br>
 > }<br>
 
-> wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant.conf
-> udhcpc -i wlan0
+> wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant.conf<br>
+> udhcpc -i wlan0<br>
 
 
 For cross compiling add to image feature: tools-sdk <br>
