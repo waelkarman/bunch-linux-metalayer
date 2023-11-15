@@ -23,3 +23,7 @@ populate /etc/wpa_supplicant.conf like:
 
 - wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant.conf
 - udhcpc -i wlan0
+
+
+For cross compiling add to image feature: tools-sdk
+For compiling on the embedded dev: dev-pkgs
