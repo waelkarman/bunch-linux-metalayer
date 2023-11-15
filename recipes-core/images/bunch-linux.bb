@@ -13,4 +13,4 @@ IMAGE_INSTALL += " zmqrequest zmqreply zmqpublish zmqsubscribe"
 IMAGE_INSTALL += " helloworld hello-module"
 IMAGE_INSTALL += " sensors-app systemdservices gpio-write-sysfs passivebuzzer-service gpio-read-sysfs-service networkchecker-service icon-weston"
 
-IMAGE_INSTALL += " qtbase qtwayland qtconnectivity qtdeclarative qtserialport qtsystems qttools qtwebsockets qtxmlpatterns openssh-sftp-server gdb gdbserver"
+IMAGE_INSTALL += " packagegroup-qt5-toolchain-target qtbase qtwayland qtconnectivity qtdeclarative qtserialport qtsystems qttools qtwebsockets qtxmlpatterns openssh-sftp-server gdb gdbserver"
