@@ -15,7 +15,7 @@
 # licenses then you should change the value to separate the licenses with |
 # instead of &. If there is any doubt, check the accompanying documentation
 # to determine which situation is applicable.
-LICENSE = "GPL-3.0-only & Unknown"
+LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = "file://COPYING;md5=f27defe1e96c2e1ecd4e0c9be8967949 \
                     file://COPYING.DOC;md5=ad1419ecc56e060eccf8184a87c4285f"
 
