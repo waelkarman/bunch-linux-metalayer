@@ -12,7 +12,7 @@
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
 
-SRC_URI = "git://git@github.com/waelkarman/networkchecker-service.git;user=waelkarman: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;protocol=ssh;branch=master"
+SRC_URI = "git://git@github.com/waelkarman/networkchecker-service.git;user=waelkarman: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;protocol=ssh;branch=master"
 
 # Modify these as desired
 PV = "1.0+git${SRCPV}"
