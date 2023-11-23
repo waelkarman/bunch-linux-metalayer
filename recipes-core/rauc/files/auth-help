@@ -1,6 +1,8 @@
-openssl genrsa -out bunch-auth-update.key.pem 4096
-openssl req -x509 -sha256 -new -nodes -key bunch-auth-update.key.pem -out bunch-auth-update.cert.pem
+# Creating a certificate
+openssl req -x509 -newkey rsa:4096 -keyout bunch-auth-update.key.pem -out bunch-auth-update.cert.pem -nodes -text
 
+# Check the certificate : 
+openssl x509 -in bunch-auth-update.cert.pem -text -noout
 
 Country Name (2 letter code) [AU]:IT
 State or Province Name (full name) [Some-State]:Italy
