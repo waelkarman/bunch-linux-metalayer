@@ -1,5 +1,7 @@
 inherit bundle
 
+FILESEXTRAPATHS:prepend := "${THISDIR}/rauc:"
+
 RAUC_KEY_FILE_PREFIX = "${THISDIR}/rauc/"
 RAUC_CERT_NAME_PREFIX ?= "bunch-auth-update"
 
