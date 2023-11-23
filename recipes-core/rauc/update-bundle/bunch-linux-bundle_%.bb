@@ -6,6 +6,8 @@ RAUC_BUNDLE_DESCRIPTION = "Bunch Linux SYSTEM RAUC UPDATE"
 
 RAUC_BUNDLE_COMPATIBLE = "bunch-linux"
 
+#RAUC_BUNDLE_FORMAT ?= "verity"
+
 RAUC_SLOT_rootfs = "bunch-linux"
 #RAUC_SLOT_rootfs[type] = "image"
 #RAUC_SLOT_rootfs[fstype] = "tar"
