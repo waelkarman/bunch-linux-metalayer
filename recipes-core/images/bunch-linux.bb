@@ -6,7 +6,7 @@ inherit populate_sdk_qt5
 
 IMAGE_FEATURES += " weston ssh-server-openssh tools-sdk debug-tweaks package-management hwcodecs tools-debug"
 
-IMAGE_INSTALL += " pi-bluetooth bluez5 iw wpa-supplicant linux-firmware-bcm43455 busybox-udhcpc rsync parted util-linux screen lsof wget net-tools"
+IMAGE_INSTALL += " pi-bluetooth bluez5 iw wpa-supplicant linux-firmware-bcm43455 busybox-udhcpc rsync parted util-linux screen lsof wget net-tools ntp u-boot-fw-utils"
 IMAGE_INSTALL += " systemd tree i2c-tools nano rauc jq v4l-utils" 
 IMAGE_INSTALL += " raspi-gpio pi-blaster libgpiod-dev rpi-gpio rpio"
 IMAGE_INSTALL += " python3-pyzmq python3 python3-pip"
@@ -17,9 +17,9 @@ IMAGE_INSTALL += " sensors-app systemdservices gpio-write-sysfs passivebuzzer-se
 IMAGE_INSTALL += " packagegroup-qt5-toolchain-target packagegroup-qt5-qtcreator-debug"
 
 # nativesdk-packagegroup-qt5-toolchain-host  
-# Default Targetq
+#
+# Default Target
 # SYSTEMD_DEFAULT_TARGET = "bunch-linux.target"
-
-# Manage rootfs extra space parted util-linux screen lsof wget
+#
 # IMAGE_ROOTFS_EXTRA_SPACE = "3643040"
 #  
