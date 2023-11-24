@@ -1,4 +1,7 @@
 # bunch-linux-metalayer
+## System Update OTA
+set the right date to be able to sign the bundle.
+> date -s 'yyy/mm/gg'
 
 ## WiFi 
 Notes:
