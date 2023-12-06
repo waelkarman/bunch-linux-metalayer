@@ -15,11 +15,3 @@ IMAGE_INSTALL += " helloworld hello-module"
 IMAGE_INSTALL += " sensors-app systemdservices gpio-write-sysfs passivebuzzer-service gpio-read-sysfs-service networkchecker-service nautilus icon-weston"
 
 IMAGE_INSTALL += " bunch-update curl packagegroup-qt5-toolchain-target packagegroup-qt5-qtcreator-debug tigervnc"
-
-# nativesdk-packagegroup-qt5-toolchain-host  
-#
-# Default Target
-# SYSTEMD_DEFAULT_TARGET = "bunch-linux.target"
-#
-# IMAGE_ROOTFS_EXTRA_SPACE = "3643040"
-#  
