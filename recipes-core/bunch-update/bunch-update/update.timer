@@ -1,10 +1,9 @@
 [Unit]
-Description=Update check timer
+Description=Update timer
 
 [Timer]
-OnBootSec=2min
-OnUnitActiveSec=2min
-AccuracySec=10
+OnBootSec=5min
+Unit=update.service
 
 [Install]
 WantedBy=timers.target
