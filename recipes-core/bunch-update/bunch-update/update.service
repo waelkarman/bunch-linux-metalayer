@@ -1,0 +1,10 @@
+[Unit]
+Description=Bunch-Linux update service
+
+[Service]
+Type=oneshot
+ExecCondition=/usr/bin/curl --connect-timeout 5 --output /dev/null --silent --head --fail https://waelkarman.github.io/bunch-linux-manifests/bunch-update.json
+ExecStart=/usr/bin/bunch-update.sh
+
+[Install]
+WantedBy=multi-user.target
