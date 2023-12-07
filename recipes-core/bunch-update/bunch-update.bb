@@ -15,7 +15,7 @@ do_install:append() {
 }
 RDEPENDS:${PN} += " curl"
 FILES:${PN} += "/lib/systemd/system/update.service \
-                /lib/systemd/system/update.service \
+                /lib/systemd/system/update.timer \
 "
 
 

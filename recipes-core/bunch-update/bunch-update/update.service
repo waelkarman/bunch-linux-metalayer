@@ -4,7 +4,6 @@ Description=Bunch-Linux update service
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/bunch-update.sh
-RemainAfterExit=true
 
 [Install]
 WantedBy=multi-user.target
