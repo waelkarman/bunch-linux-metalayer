@@ -12,12 +12,20 @@ if ! curl --connect-timeout 5 --silent --fail --output "${DOWNLOADED_VERSION}" "
 	exit 0
 fi
 
-CURRENT_SYSTEM_VERSION=$(cat ${SYSTEM_INFO} | grep VERSION_ID | sed "s/VERSION_ID=//g")
+CURRENT_SYSTEM_VERSION=$(cat ${SYSTEM_INFO} | grep VERSION_ID | sed "s/VERSION_ID=//g" | sed "s/-.*$//g" )
 DOWNLOADED_SYSTEM_VERSION=$(cat ${DOWNLOADED_VERSION} | jq .version | sed "s/\"//g")
+NIGHTLY_CODE=$(cat ${SYSTEM_INFO} | grep VERSION_ID | sed "s/VERSION_ID=//g" | sed "s/^.*-//g" )
+DOWNLOADED_SYSTEM_VERSION_NIGHTLY=$(cat ${DOWNLOADED_VERSION} | jq .version | sed "s/\"//g" | sed "s/^.*-//g" )
+
+echo "code : "
+echo $NIGHTLY_CODE
+echo $DOWNLOADED_SYSTEM_VERSION_NIGHTLY
 
 if [ "$CURRENT_SYSTEM_VERSION" = "$DOWNLOADED_SYSTEM_VERSION" ] ; then
-	echo "System up to date."
-	exit 0
+	if [ "$NIGHTLY_CODE" = "$DOWNLOADED_SYSTEM_VERSION_NIGHTLY" ] ; then
+		echo "System up to date."
+		exit 0
+	fi
 fi
 
 DOWNLOADED_SYSTEM_BUNDLE=$(cat ${DOWNLOADED_VERSION} | jq .url | sed "s/\"//g")

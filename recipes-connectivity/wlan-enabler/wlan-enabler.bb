@@ -13,7 +13,6 @@ do_install:append() {
 }
 RDEPENDS:${PN} += " curl"
 FILES:${PN} += "/lib/systemd/system/wlan-enabler.service \
-                /lib/systemd/system/wlan-enabler.timer \
 "
 
 SYSTEMD_SERVICE:${PN} = "wlan-enabler.service"
