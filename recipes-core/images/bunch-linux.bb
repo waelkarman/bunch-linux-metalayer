@@ -14,4 +14,4 @@ IMAGE_INSTALL += " zmqrequest zmqreply zmqpublish zmqsubscribe"
 IMAGE_INSTALL += " helloworld hello-module"
 IMAGE_INSTALL += " sensors-app systemdservices gpio-write-sysfs passivebuzzer-service gpio-read-sysfs-service networkchecker-service nautilus icon-weston"
 
-IMAGE_INSTALL += " bunch-update curl packagegroup-qt5-toolchain-target packagegroup-qt5-qtcreator-debug tigervnc"
+IMAGE_INSTALL += " wlan-enabler bunch-update env-config curl packagegroup-qt5-toolchain-target packagegroup-qt5-qtcreator-debug tigervnc"

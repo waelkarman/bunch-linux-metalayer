@@ -18,6 +18,5 @@ FILES:${PN} += "/lib/systemd/system/update.service \
                 /lib/systemd/system/update.timer \
 "
 
-
 SYSTEMD_SERVICE:${PN} = "update.timer update.service"
 SYSTEMD_AUTO_ENABLE = "enable"
