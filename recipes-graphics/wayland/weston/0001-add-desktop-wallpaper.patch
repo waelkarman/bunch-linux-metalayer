@@ -28,7 +28,7 @@ index fb53069..8d6fae1 100644
 +		char *name = file_name_with_datadir("background.png");//pattern.png
  
  		image = load_cairo_surface(name);
-+		background->type = BACKGROUND_CENTERED;
++		background->type = BACKGROUND_SCALE;
  		free(name);
  	}
  
