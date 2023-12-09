@@ -37,7 +37,7 @@ reset
 fi
 
 
-echo \"---START---\"
+echo \"---WELCOME TO BUNCH_LINUX---\"
 
 fdt addr \${fdt_addr} && fdt get value default_bootargs /chosen bootargs
 setenv bootargs \"\${default_bootargs} \${bootargs} rootfstype=ext4 rootwait\"
