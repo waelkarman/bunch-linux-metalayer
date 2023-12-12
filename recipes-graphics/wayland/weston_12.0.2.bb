@@ -25,7 +25,7 @@ inherit meson pkgconfig useradd
 require ${THISDIR}/required-distro-features.inc
 
 DEPENDS = "libxkbcommon gdk-pixbuf pixman cairo glib-2.0"
-DEPENDS += "wayland wayland-protocols libinput virtual/egl pango wayland-native neatvnc"
+DEPENDS += "wayland wayland-protocols libinput virtual/egl pango wayland-native neatvnc freerdp "
 
 LDFLAGS += "${@bb.utils.contains('DISTRO_FEATURES', 'lto', '-Wl,-z,undefs', '', d)}"
 
@@ -44,7 +44,7 @@ PACKAGECONFIG ??= "${@bb.utils.contains('DISTRO_FEATURES', 'wayland', 'kms wayla
                    shell-fullscreen \
                    shell-ivi \
                    shell-kiosk \
-                   vnc \
+                   vnc rdp\
                    "
 
 # Can be 'damage', 'im', 'egl', 'shm', 'touch', 'dmabuf-feedback', 'dmabuf-v4l', 'dmabuf-egl' or 'all'
