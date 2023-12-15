@@ -30,3 +30,16 @@ populate /etc/wpa_supplicant.conf like:
 
 For cross compiling add to image feature: tools-sdk <br>
 For compiling on the embedded dev: dev-pkgs
+
+
+
+
+printf "%q" $(mkpasswd -m sha256crypt temppw)
+# TODO: REMOVE PASSWORD ASSIGNMENT FOR SERIAL IMAGE "admin"
+PASSWD = "\$5\$YA7nDY0J\$th7S4jEgsrMeq45QCksPT6.gKk0Wqu3kO9xCgt7Yj43"
+EXTRA_USERS_PARAMS = " \
+    useradd -p '' kg; \
+    usermod -p '${PASSWD}' kg; \
+    usermod -p '${PASSWD}' weston; \
+    usermod  -a -G sudo kg; \
+"
