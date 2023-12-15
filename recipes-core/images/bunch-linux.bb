@@ -5,7 +5,7 @@ inherit core-image
 inherit populate_sdk_qt5
 inherit extrausers
 
-# To generate a valid pass: printf "%q" $(mkpasswd -m sha256crypt admin)
+# To generate a valid pass: printf "%q" $(mkpasswd -m sha256crypt admin-nosexinthechurch)
 PASSWD = "\$5\$YA7nDY0J\$th7S4jEgsrMeq45QCksPT6.gKk0Wqu3kO9xCgt7Yj43"
 RPASSWD = "\$5\$V/WjSZ.9uAtjSsmh\$HygHAdb1T4CjqlUfhFsvZ7iVcRoFvwQRWJvwnzr.fWB"
 

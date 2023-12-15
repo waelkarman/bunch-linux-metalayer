@@ -37,7 +37,7 @@ printf "Start updating..\n"
 if rauc install ${BUNCH_UPDATE_BUNDLE} ; then
 	printf "System Updated\n"
 	rm -f ${BUNCH_UPDATE_BUNDLE}
-	#reboot
+	reboot
 else
 	printf "Update Failed\n"
 	rm -f ${BUNCH_UPDATE_BUNDLE}
