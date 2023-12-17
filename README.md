@@ -34,12 +34,8 @@ For compiling on the embedded dev: dev-pkgs
 
 
 
-printf "%q" $(mkpasswd -m sha256crypt temppw)
-# TODO: REMOVE PASSWORD ASSIGNMENT FOR SERIAL IMAGE "admin"
-PASSWD = "\$5\$YA7nDY0J\$th7S4jEgsrMeq45QCksPT6.gKk0Wqu3kO9xCgt7Yj43"
-EXTRA_USERS_PARAMS = " \
-    useradd -p '' kg; \
-    usermod -p '${PASSWD}' kg; \
-    usermod -p '${PASSWD}' weston; \
-    usermod  -a -G sudo kg; \
-"
+>printf "%q" $(mkpasswd -m sha256crypt temppw)<br>
+>PASSWD = "\$5\$YA7nDY0J\$th7S4jEgsrMeq45QCksPT6.gKk0Wqu3kO9xCgt7Yj43"<br>
+>EXTRA_USERS_PARAMS = " \\<br>
+>    usermod -p '${PASSWD}' weston; \\<br>
+>"
