@@ -7,11 +7,9 @@ inherit extrausers
 
 # To generate a valid pass: printf "%q" $(mkpasswd -m sha256crypt admin-nosexinthechurch)
 PASSWD = "\$5\$YA7nDY0J\$th7S4jEgsrMeq45QCksPT6.gKk0Wqu3kO9xCgt7Yj43"
-RPASSWD = "\$5\$V/WjSZ.9uAtjSsmh\$HygHAdb1T4CjqlUfhFsvZ7iVcRoFvwQRWJvwnzr.fWB"
 
 EXTRA_USERS_PARAMS = " \
     usermod -p '${PASSWD}' weston; \
-    usermod -p '${RPASSWD}' root; \
 "
 
 IMAGE_FEATURES += " weston ssh-server-openssh tools-sdk debug-tweaks package-management hwcodecs tools-debug"
@@ -24,5 +22,15 @@ IMAGE_INSTALL += " zmqrequest zmqreply zmqpublish zmqsubscribe"
 IMAGE_INSTALL += " helloworld hello-module"
 IMAGE_INSTALL += " sensors-app systemdservices gpio-write-sysfs passivebuzzer-service gpio-read-sysfs-service networkchecker-service nautilus icon-weston"
 IMAGE_INSTALL += " wlan-enabler bunch-update curl packagegroup-qt5-toolchain-target packagegroup-qt5-qtcreator-debug neatvnc"
+IMAGE_INSTALL += " pipewire pipewire-modules-rt pipewire-alsa pipewire-v4l2 pipewire-dev pipewire-tools"
 
+do_deploy_to_rasp() {
+    # Codice personalizzato da eseguire alla fine della creazione del pacchetto
+    # L'output è visibile al path: build/tmp/work/bunch_raspberrypi4_64-poky-linux/bunch-linux/1.0-r0/temp/log.do_deploy_to_rasp
+    echo "Custom deploy task."
+    echo "- current path: $(pwd)"
+    #scp $(pwd)/tmp/deploy/images/bunch-raspberrypi4-64/bunch-linux-bundle-bunch-raspberrypi4-64.raucb root@192.168.1.28:~/
 
+}
+
+addtask deploy_to_rasp after do_image_complete
