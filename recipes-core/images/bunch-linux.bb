@@ -22,7 +22,7 @@ IMAGE_INSTALL += " zmqrequest zmqreply zmqpublish zmqsubscribe"
 IMAGE_INSTALL += " helloworld hello-module"
 IMAGE_INSTALL += " sensors-app systemdservices gpio-write-sysfs passivebuzzer-service gpio-read-sysfs-service networkchecker-service nautilus icon-weston"
 IMAGE_INSTALL += " wlan-enabler bunch-update curl packagegroup-qt5-toolchain-target packagegroup-qt5-qtcreator-debug neatvnc"
-IMAGE_INSTALL += " pipewire pipewire-modules-rt pipewire-alsa pipewire-v4l2 pipewire-dev pipewire-tools"
+IMAGE_INSTALL += " pipewire pipewire-modules-rt pipewire-alsa pipewire-v4l2 pipewire-dev pipewire-tools pipewire-spa-plugins-meta pipewire-spa-tools pipewire-modules-meta"
 
 do_deploy_to_rasp() {
     # Codice personalizzato da eseguire alla fine della creazione del pacchetto
@@ -30,7 +30,7 @@ do_deploy_to_rasp() {
     echo "Custom deploy task."
     echo "- current path: $(pwd)"
     #scp $(pwd)/tmp/deploy/images/bunch-raspberrypi4-64/bunch-linux-bundle-bunch-raspberrypi4-64.raucb root@192.168.1.28:~/
-
+    #dd if=$(pwd)/tmp/deploy/images/bunch-raspberrypi4-64/bunch-linux-bundle-bunch-raspberrypi4-64.raucb of=/dev/sda bs=4M
 }
 
 addtask deploy_to_rasp after do_image_complete
