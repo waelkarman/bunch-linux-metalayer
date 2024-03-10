@@ -12,7 +12,7 @@
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
 
-SRC_URI = "git://git@github.com/waelkarman/ipc-cp-reply-test.git;user=waelkarman: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;protocol=ssh;branch=main"
+SRC_URI = "git://git@github.com/waelkarman/ipc-cp-reply-test.git;protocol=ssh;branch=main"
 
 # Modify these as desired
 PV = "1.0+git${SRCPV}"
